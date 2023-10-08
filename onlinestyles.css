@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar {
+    width: 100%; /* Робимо бічний бар на весь екран */
+    left: 0;
+  }
+
+  /* Додаткові стилі, які можливо потрібно змінити */
+  /* Наприклад, змінити ширину тексту або зробити гамбургер-меню видимим */
+}
+
+/* Для екранів шириною від 768px до 1199px */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .sidebar {
+    width: 250px; /* Повертаємо ширину бічного бару на більший розмір екрану */
+    left: 0;
+  }
+
+  /* Додаткові стилі, які можливо потрібно змінити */
+}
+
+/* Для екранів шириною від 1200px і більше */
+@media screen and (min-width: 1200px) {
+  /* Додаткові стилі для більших екранів, які можливо потрібно змінити */
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #f8f9fa ;
+  transition: all .5s ease;
+  overflow-y: scroll;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #063146;/*tutorial back*/
+  /*background: grey;*//*my back*/
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+ul li:hover a
+{
+  padding-left: 50px;
+}
+.sidebar ul a i
+{
+  margin-right: 16px;
+}
+
+.header ul li li
+{
+  color: blue; 
+}
+
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  /*background: #042331;*/
+  border-radius: 100px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  position: fixed;
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+
+
+
+.header
+{
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  max-height: 300px;
+  background-image: linear-gradient(to bottom, white, grey);
+  margin-bottom: 20px;
+}
+
+.header label
+{
+  color: blue;
+}
+
+.header nav
+{
+  display: inline-block;
+  float: right;
+  clear: right;
+  margin: 15px 20px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  text-decoration: none;
+  color: blue;
+  font-size: 16px;
+}
+
+.header li a
+{
+  color: #006CEE;
+}
+.header li a.current{
+   color: yellow;
+   background:grey;
+
+}
+
+.header nav ul li
+{
+  display: inline-block;
+  margin-right: 10px;
+  padding: 2px 2px 2px 2px;
+}
+
+.sidebar hr
+{
+  posotion: relative;
+  width: 100%;
+  color: black;
+  border-inline-style: solid;
+}
+ 
+.level2
+{
+  margin: 15px 0px 20px 40px;
+  padding: 0px 0px 0px 15px;
+} 
+
+
+.infobox {
+
+    border: 1px solid black; /*#a2a9b1*/
+    border-spacing: 3px;
+    background-color: #f8f9fa;
+    color: black;
+    padding: 0.2em;
+    float: right;
+    clear: right;
+    font-size: 88%;
+    text-align: left;
+    width: 15%;
+    margin: 20px 20px 15px 25px;
+}
+
+.infobox td
+{
+  padding: 15px 20px 5px 25px;
+}
+
+.infobox img
+{
+  border: 0;
+  vertical-align: top;
+  text-align: center;
+  margin: 15px 10px 5px 20px; 
+  overflow: clip;
+}
+#logo
+{
+  border: 0;
+  vertical-align: top;
+  text-align: center;
+  margin: 15px 10px 0px 40px; 
+  padding-left: 20px ;
+  overflow: clip;
+  text-align: right;
+} 
+
+ .top
+{
+  position: fixed; 
+  right: 45px; 
+  bottom: 45px;
+  Border-radius: 100px;
+ } 
+.main
+{
+  font-family: "Tahoma", sans-serif; 
+  margin-top: 75px;
+  padding-bottom: 100px;
+  float: right;
+  width: 90%;
+  min-height: 100%;
+
+}
+
+h1, h2, h3, h4, h5 ,h6
+{
+  font-family: 'Linux Libertine','Georgia','Times',serif;/*wikipedia fonts*/
+  /*font-family: "Courier New", "Roboto", monospace;*//*my fonts*/
+  margin: 25px 0px 20px 0px;
+  color: #585858;
+}
+h3
+{
+  font-size: 21 px; 
+}
+h4, h5
+{
+  font-size: 1em;
+}
+
+
+p
+{
+  padding: 0px 2px 5px 0px;
+  margin: 2px 135px 15px 5px;
+  line-height: 27px;
+}
+
+
+.image
+{
+  margin: 0.5em 20px 1.3em 1.4em;
+  border: 3px solid #c8ccd1;
+  border-radius: 5px;
+  min-width: 100px;
+  justify-content: center;
+  text-align: center;
+  clear: right;
+  float: right;
+}
+
+.image img
+{
+  width: 250px;
+  aspect-ratio: auto 220 / 146;
+  height: 175px;
+  overflow: clip;
+}
+.image figcaption
+{
+  max-width: 220px;
+  font-size: 16px;
+  padding: 5px 5px 2px 15px;
+}
+
+
+.footer
+{
+    border-top: 1px solid #a2a9b1;
+    padding: 0.75em 0;
+    direction: ltr;
+    display: block;
+    background-color: grey;
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
+    background-image: linear-gradient(to bottom, grey, white);
+}
+
+.footer a{
+  margin: 10px 0px 5px 25px; 
+  color: #0088EC;
+}
+.footer p
+{
+  font-family: sans-serif;
+  margin: 10px 0px 5px 25px; 
+}
+
+.footer ul li
+{
+  margin: 10px 0px 5px 25px; 
+  list-style-type: disc;
+}
